@@ -1,0 +1,90 @@
+<?php include("inc/header.php"); ?>
+<body>
+   <!-- topbar -->
+   <div class="topbar">
+      <div class="wrapper">
+         <div class="row">
+            <div class="left">
+               <h1>Faites les questions qui trouble? <strong>Appel!</strong> Claras répond. Toute la vérité.</h1>
+            </div>
+            <div class="right topbar-connexion">
+               <div class="topbar-connexion--form" id="connexion">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="content">
+      <div class="wrapper">
+         <div class="row">
+            <div class="col-6 hidden-xs hidden-sm">
+               &nbsp;
+               <div class="big-image--wrapper" style="background-color: #57828b;">
+                  <img src="img/tarotista.png" alt="" class="big-image--image big-image--image_loaded">
+                  <div class="big-image--info">
+                     <div class="big-image--info---title">
+                        <h1 class="serif" style="font-size: 41.3333px;"><?php echo $seo['content']['h1']; ?></h1>
+                        <h2>TAROTISTA <span class="sep">—</span> ASTROLOGUE <span class="sep">—</span> VOYANCE</h2>
+                     </div>
+                     <div class="big-image--info---text">
+                        <p><?php echo $seo['content']['desc1']; ?></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <main class="col-6 public-form">
+               <h1 class="serif" style="font-size: 83.1429px;"><img src="img/tarotista-min.jpg" height="400" width="400" alt=""><?php echo $seo['content']['h1']; ?></h1>
+               <h2 style="font-size: 29.1px;margin-top: 2px;"><?php echo $seo['content']['h2']; ?></h2>
+               <div class="same_height" style="">
+                  <div class="variant col-md-6" align="center">
+                     <div class="action" style="background: #ed5483;color: #fff;border-radius: 10px;margin-top: 8px;padding: 12px 5px;">
+                        <div align="center">Marque maintenant</div>
+                        <i class="fa fa-phone" style="font-size:1.8em"> </i> <a href="tel:806.40.36.40" style="font-size:2.5em;    color: #fff;"> <strong>806.40.36.40</strong></a>
+                        <br> 
+                        <div align="center">Precio Máx. €/min 806: 1,21€/min red fija, 1,57€/min red móvil. Iva Incluido. Mayores 18 años.</div>
+                     </div>
+                     <br>
+                  </div>
+                  <div class="variant col-md-6" align="center">
+                     <div class="action" style="background: #ed5483;color: #fff;border-radius: 10px;margin-top: 8px;padding: 12px 5px;">
+                        <div align="center">Marque maintenant</div>
+                        <i class="fa fa-cc-visa" aria-hidden="true" style="font-size:1.8em"></i>
+                        <a href="tel:93.172.78.94" style="font-size:2.5em;    color: #fff;"> <strong> 93.172.78.94</strong></a>
+                        <br> 
+                        <div align="center">Llamada al 93 es una llamada a un fijo de Barcelona sin coste adicional. Coste de la consulta: 1€/min IVA Incl.<br> Mayores 18 años</div>
+                     </div>
+                     <br>
+                  </div>
+               </div>
+               <script type="text/javascript">
+                  function same_height(){
+                   var max_height=0;
+                  
+                   $(".same_height").find("div.action").each(function(){
+                  	//console.log(max_height);
+                  	$(this).height("auto");
+                   });
+                   $(".same_height").find("div.action").each(function(){
+                  	$this = $(this);
+                  	if($this.height()>max_height)
+                  		max_height = $this.height();
+                   });
+                   $(".same_height").find("div.action").each(function(){
+                  	//console.log(max_height);
+                  	$(this).height(max_height);
+                   });
+                  }
+                  $(window).resize(function(){
+                  same_height();
+                  });
+                  same_height();
+               </script>
+               <p align="center" style="font-size:19px;font-size: 20px;font-weight: 200;font-style: italic;text-align: center !important;margin-bottom: 0 !important;padding: 20px; margin-top:50px;"><?php echo $seo['content']['desc2']; ?> </p>
+               <div align="center" style="border: 0;text-decoration: none;padding: 0 1em;padding-bottom: 0;height: 32px;line-height: 32px;background: #ed5483;color: white;vertical-align: middle;border-radius: 2px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;font-size: 1.825rem;padding: .5em 2em;height: auto;border-radius: 2px; margin-top:54px;">  Tu as besoin d'aide?</div>
+               
+               <div><img src="/img/enamorados.png" width="100%"></div>
+            </main>
+         </div>
+      </div>
+   </div>
+   <?php include("inc/footer.php"); ?>
