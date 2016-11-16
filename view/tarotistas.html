@@ -1,0 +1,158 @@
+
+<style type="text/css">
+@media screen and (max-width:1199px) and (min-width:992px){
+	a.ver-ficha button{
+		width:100%;
+	}
+	a.ver-ficha button:first-of-type{
+		margin-bottom:5px;
+	}
+}
+@media screen and (max-width:550px){
+	a.ver-ficha button{
+		width:100%;
+	}
+	a.ver-ficha button:first-of-type{
+		margin-bottom:5px;
+	}
+}
+</style>
+
+<div class="container">
+
+
+<br>
+<div class="tarotistas row">
+
+
+		<?php
+		shuffle($vars['tarotistas']);
+		foreach($vars['tarotistas'] as $key => $tarotista) : ?>
+			<?php $tarotista_num = pathinfo($tarotista['photo_url'],PATHINFO_FILENAME); ?>
+
+
+<div class="tarotista tarotista-0 col-md-6">
+		<div class="tarotista_perfil" style="background-color: #272727;">
+
+            <div style="background-image:url(<?php echo $tarotista['fondo']; ?>);"></div>
+
+            <aside>
+
+                <img width="150" height="150" src="<?php echo $tarotista['photo_url']; ?>" class="tarotista_img_interior photo wp-post-image" alt="VALENTINA">
+                <section style="padding-left:10px;">
+
+                    <p>Tarotista</p>
+                    <p><a style="text-decoration:none; text-transform:uppercase" target="_blank" href="<?php echo $tarotista['url']; ?>" ><?php echo $tarotista['name']; ?></a></p>
+
+                </section>
+
+                <section>
+
+                    <div id="tarotistaEstadoRespuesta">
+<p style="background-color:#339900;">Extensión: 534</p></div>
+
+                </section>
+   					
+                    
+                 
+                    
+                    
+                <div class="clear"></div>
+
+                <section>
+
+                    <div>
+
+                        <div class="clear" style="margin-top:20px;"></div>
+                    </div>
+
+                
+                    <div class="clear"></div>
+
+                </section>
+
+            </aside>
+            <div class="row" style="background-color:#272727;margin: 0;clear:both;    padding-bottom: 47px;">
+<div class="col-sm-6">
+  <h3 style="margin-top: 20px;font-weight: bold;
+    font-size: 15px;
+    margin-botom: 5px;
+    font-family: 'Oxygen', sans-serif;
+    text-transform: uppercase;
+    color: #ffcc00;"><?php echo $tarotista['name']; ?></h3>
+                 
+<p class="height-xs-auto" style="color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    height: 100px;
+    overflow: hidden;"><?php echo str_replace("<b>","",str_replace("</b>","",$tarotista['short_description'])); ?></p>
+  
+
+</div>
+
+<div class="col-sm-6">
+    <h3 style="    font-weight: bold;font-size: 15px;margin-botom:;font-family: 'Oxygen', sans-serif;text-transform: uppercase;color: #ffcc00;">VALORACIÓN</h3>
+                 <div align="center" style="    font-weight: bold;font-size: 13px;margin-botom: 5px;font-family: 'Oxygen', sans-serif;text-transform: uppercase;color: #fff;" class="valoracion">
+                 </div>
+      <div class="stars">
+                        <div class="stars-on" style="width: 120px;margin:0 auto;"></div>
+      </div>
+                    
+</div>
+
+  <?php
+                //session_start();
+                $tarotista = (intval($tarotista_num)-1);
+                switch($_SESSION['tarotistas'][$tarotista]['status']){
+                    default:
+                    case 3:
+                        $disponibilidad_html = "¡Disponible!";
+                        $disponibilidad_class = "disponible";
+                    break;
+                    case 2:
+                        $disponibilidad_html = "¡En Consulta!";
+                        $disponibilidad_class = "en-consulta";
+                    break;
+                    case 1:
+                        $disponibilidad_html = "¡Ausente!";
+                        $disponibilidad_class = "ausente";
+                    break;
+                }
+                ?>
+                <style type="text/css">
+				a.ver-ficha.disponible{
+					background-color:rgb(47, 177, 47) !important;
+				}
+				a.ver-ficha.en-consulta{
+					background-color:orange !important;
+				}
+				a.ver-ficha.ausente{
+					background-color:#800040 !important;
+				}
+				</style>
+				<a  style="display: block;position: absolute;right: 0px;bottom: 0px;width: 100%;background: #C968AB;text-align: center;padding: 10px;color: #fff;
+font-size: 1.4em;" href="<?php echo $tarorista['url']; ?>"  class="ver-ficha <?php echo $disponibilidad_class; ?> "><?php echo $disponibilidad_html; ?></a>
+
+        </div></div>
+</div>
+		
+	<?php endforeach; ?>
+
+</div>
+
+</div>
+<script>
+$(document).ready(function(e) {
+    $(".valoracion").each(function(){
+  $this = $(this);
+  valoracion = Math.random() * (99.5 - 92) + 92;
+  $this.append("<br>"+valoracion.toFixed(2)+"% de votos positivos");
+});
+
+$('.stars-on').each(function(){
+    $(this).css({'width': (Math.floor(Math.random() * ((120-93)+1) + 93))});
+  });
+
+});
+</script>
+

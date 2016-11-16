@@ -1,0 +1,142 @@
+
+<style type="text/css">
+@media screen and (max-width:1199px) and (min-width:992px){
+	a.ver-ficha button{
+		width:100%;
+	}
+	a.ver-ficha button:first-of-type{
+		margin-bottom:5px;
+	}
+}
+@media screen and (max-width:550px){
+	a.ver-ficha button{
+		width:100%;
+	}
+	a.ver-ficha button:first-of-type{
+		margin-bottom:5px;
+	}
+}
+</style>
+
+<div class="container">
+
+
+<br>
+<div class="tarotistas row">
+
+
+		<?php
+		shuffle($vars['tarotistas']);
+		foreach($vars['tarotistas'] as $key => $tarotista) : ?>
+			<?php $tarotista_num = pathinfo($tarotista['photo_url'],PATHINFO_FILENAME); ?>
+
+
+<div class="tarotista tarotista-0 col-md-6">
+		<div class="tarotista_perfil" style="background-color: #272727;">
+
+            <div style="background-image:url(<?php echo $tarotista['fondo']; ?>);"></div>
+
+            <aside>
+
+                <img width="150" height="150" src="<?php echo $tarotista['photo_url']; ?>" class="tarotista_img_interior photo wp-post-image" alt="VALENTINA">
+                <section style="padding-left:10px;">
+
+                    <p>Tarotista</p>
+                    <p><a style="text-decoration:none; text-transform:uppercase" target="_blank" href="<?php echo $tarotista['url']; ?>" ><?php echo $tarotista['name']; ?></a></p>
+
+                </section>
+
+                <section>
+
+                    <div id="tarotistaEstadoRespuesta">
+<p style="background-color:#339900;">90% de los clientes satisfechos</p></div>
+
+                </section>
+
+                <div class="clear"></div>
+
+                <section>
+
+                    <div>
+
+                        <div class="clear" style="margin-top:20px;"></div>
+                    </div>
+
+                
+                    <div class="clear"></div>
+
+                </section>
+
+            </aside>
+            <div class="row" style="background-color:#272727;margin: 0;clear:both;">
+<div class="col-sm-6">
+  <h3 style="margin-top: 20px;font-weight: bold;
+    font-size: 15px;
+    margin-botom: 5px;
+    font-family: 'Oxygen', sans-serif;
+    text-transform: uppercase;
+    color: #ffcc00;"><?php echo $tarotista['name']; ?></h3>
+                 
+<p class="height-xs-auto" style="color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    height: 150px;
+    overflow: hidden;"><?php echo str_replace("<b>","",str_replace("</b>","",$tarotista['short_description'])); ?></p>
+                    
+</div>
+
+<div class="col-sm-6">
+    <h3 style="    font-weight: bold;
+    font-size: 15px;
+    margin-botom: 5px;
+    font-family: 'Oxygen', sans-serif;
+    text-transform: uppercase;
+    color: #ffcc00;">Llama ahora</h3>
+                   
+                    
+                <div class="tarotistas_telefonos_servicio">
+
+                    <div><img  style="    width: 18px;
+    position: relative;
+    right: 5px;
+    top: -2px;" src="/img/bandera.png" alt=""><a href="" style="font-size: 30px;color: #f2d701;text-align: right;font-weight: bold;"><?php echo $tarotista['phone-9']; ?></a></div>
+
+                    <div class="clear"></div>
+
+                    <p style="color:#fff">Consulta con Visa: Oferta, 20% de descuento
+
+</p>
+
+                    <div class="clear"></div>
+
+</div>
+        
+                <div class="tarotistas_telefonos_servicio">
+
+                    <div><img  style="    width: 18px;
+    position: relative;
+    right: 5px;
+    top: -2px;" src="/img/bandera.png" alt=""><a href="" style="font-size: 30px;color: #f2d701;text-align: right;font-weight: bold;"><?php echo $tarotista['phone-806']; ?></a></div>
+
+                    <div class="clear"></div>
+
+                    <p style="color:#fff">806: Precio máx:€/min: 1,21 fijo; 1,57 móvil. IVA Incl.<br>
+Mayores 18 años. Servicio ofrecido por estfsarl.com
+
+</p>
+
+                    <div class="clear"></div>
+
+</div>
+</div>
+           
+        </div></div>
+</div>
+		
+	<?php endforeach; ?>
+
+</div>
+
+</div>
+
+
